@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-        #    paths:
-        #      - '*.yaml'
-        #      - '*.yml'
 
 env:
   CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
