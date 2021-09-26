@@ -16,12 +16,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: cachix/install-nix-action@v14
 
-      - name: Cache Nix store
-        uses: rikhuijzer/cache-install@v1
-        with:
-          key: ${{ runner.os }}-${{ hashFiles('shell.nix', 'nix/**') }}
-          nix_file: 'shell.nix'
-
       - name: Build nix-shell environment
         run: nix-shell --run 'echo nix-shell environment built!'
 
