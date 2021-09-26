@@ -1,13 +1,6 @@
 ---
 ? ''
-: - octodns:
-      cloudflare:
-        proxied: false
-    ttl: 1
-    type: ALIAS
-    value: relay.servers.zachlatta.com.
-  - ttl: 1
-    type: MX
+: - type: MX
     values:
     - exchange: aspmx.l.google.com.
       preference: 1
@@ -19,11 +12,9 @@
       preference: 10
     - exchange: alt4.aspmx.l.google.com.
       preference: 10
-  - ttl: 1
-    type: SPF
+  - type: SPF
     value: v=spf1 include:_spf.google.com ~all
-  - ttl: 1
-    type: TXT
+  - type: TXT
     values:
     - google-site-verification=7-5zgja0eaToN8KZRjMilCnFQf3XJPZ13Ac-l8VQMw0
     - google-site-verification=Njx6ebmx5SzOQev7JHDUahyGNd1f4CANIXJXnud0SZw
@@ -35,8 +26,7 @@ _dmarc:
 act-practice:
   octodns:
     cloudflare:
-      proxied: false
-  ttl: 1
+      proxied: true
   type: CNAME
   value: zachlatta.github.io.
 brain:
