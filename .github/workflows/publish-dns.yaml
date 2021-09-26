@@ -18,4 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: cachix/install-nix-action@v14
-      - run: nix-shell --run './bin/sync'
+      - name: Build nix-shell environment
+        run: nix-shell --run 'echo nix-shell environment built!'
+      - name: Sync DNS changes (./bin/sync)
+        run: nix-shell --run './bin/sync'
