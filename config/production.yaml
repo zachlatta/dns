@@ -5,7 +5,7 @@ manager:
 providers:
   config:
     class: octodns.provider.yaml.YamlProvider
-    directory: ./
+    directory: ./build/
     default_ttl: 3600
     enforce_order: True
   cloudflare:

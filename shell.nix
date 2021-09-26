@@ -4,10 +4,18 @@ let
   sources = import ./nix/sources.nix;
 
   mach-nix = import sources.mach-nix {};
+
+  customPython = mach-nix.mkPython {
+    requirements = ''
+      octodns
+    '';
+  };
 in
 with pkgs;
-mach-nix.mkPythonShell {
-  requirements = ''
-    octodns
-  '';
+mkShell {
+  buildInputs = [
+    customPython
+
+    dhall-json
+  ];
 }
