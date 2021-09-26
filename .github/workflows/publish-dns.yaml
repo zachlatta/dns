@@ -19,4 +19,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: cachix/install-nix-action@v14
       - uses: workflow/nix-shell-action@v1
-      - uses: uses: mxschmitt/action-tmate@v3
+      - uses: mxschmitt/action-tmate@v3
