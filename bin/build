@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Expect to be inside of the git repo when this is ran
 
