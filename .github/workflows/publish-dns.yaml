@@ -1,0 +1,22 @@
+name: publish-dns
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '*.yaml'
+      - '*.yml'
+
+env:
+  CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+
+jobs:
+  publish-dns:
+    name: Publish DNS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cachix/install-nix-action@v14
+      - uses: workflow/nix-shell-action@v1
+      - uses: uses: mxschmitt/action-tmate@v3
