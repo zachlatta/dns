@@ -13,7 +13,7 @@ env:
 
 jobs:
   publish-dns:
-    name: Publish DNS
+    name: Publish DNS changes
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
