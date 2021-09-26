@@ -1,7 +1,28 @@
 let servers = ./servers.dhall
 in
-servers // { `` =
-  [ { type = "MX"
+servers // {
+`` =
+  [ { octodns = Some { cloudflare.proxied = False }
+    , type = "ALIAS"
+    , value = Some "relay.servers.zachlatta.com."
+    , values =
+        None
+          ( List
+              ( Type ->
+                { array : List _ -> _@1
+                , bool : Bool -> _@1
+                , double : Double -> _@1
+                , integer : Integer -> _@1
+                , null : _
+                , object : List { mapKey : Text, mapValue : _ } -> _@1
+                , string : Text -> _@1
+                } ->
+                  _@1
+              )
+          )
+    }
+  , { octodns = None { cloudflare : { proxied : Bool } }
+    , type = "MX"
     , value = None Text
     , values = Some
       [ \(JSON : Type) ->
@@ -91,7 +112,8 @@ servers // { `` =
             )
       ]
     }
-  , { type = "SPF"
+  , { octodns = None { cloudflare : { proxied : Bool } }
+    , type = "SPF"
     , value = Some "v=spf1 include:_spf.google.com ~all"
     , values =
         None
@@ -109,7 +131,8 @@ servers // { `` =
               )
           )
     }
-  , { type = "TXT"
+  , { octodns = None { cloudflare : { proxied : Bool } }
+    , type = "TXT"
     , value = None Text
     , values = Some
       [ \(JSON : Type) ->
