@@ -197,4 +197,4 @@ in      { `` =
         , sshtron = { type = "A", value = "149.28.243.27" }
         , words = { type = "CNAME", value = "svbtle.com." }
         }
-    //  servers
+    /\  servers
