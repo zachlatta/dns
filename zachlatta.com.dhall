@@ -1,4 +1,6 @@
-{ `` =
+let servers = ./servers.dhall
+in
+servers // { `` =
   [ { type = "MX"
     , value = None Text
     , values = Some
@@ -163,7 +165,6 @@
   }
 , mail = { type = "CNAME", value = "ghs.googlehosted.com." }
 , monitor = { type = "CNAME", value = "zachlatta.com." }
-, `relay.servers` = { type = "A", value = "207.246.95.86" }
 , search = { type = "A", value = "100.77.1.14" }
 , sshtron = { type = "A", value = "149.28.243.27" }
 , words = { type = "CNAME", value = "svbtle.com." }
