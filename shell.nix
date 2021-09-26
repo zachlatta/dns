@@ -16,6 +16,7 @@ mkShell {
   buildInputs = [
     customPython
 
-    dhall-json
+    dhall
+    dhall-json # this has the YAML package in it
   ];
 }
