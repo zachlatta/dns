@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Exit if the build fails
+set -e
+
 # SCRIPT_DIR is the directory this script is in (which is ./bin in the repo).
 # From https://stackoverflow.com/a/246128.
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
