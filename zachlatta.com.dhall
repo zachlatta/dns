@@ -176,6 +176,12 @@ in      { `` =
             }
           ]
         , _dmarc = { type = "TXT", value = "v=DMARC1\\; p=none" }
+        , mail = { type = "CNAME", value = "ghs.googlehosted.com." }
+        , www =
+          { octodns.cloudflare.proxied = True
+          , type = "CNAME"
+          , value = "zachlatta.com."
+          }
         , act-practice =
           { octodns.cloudflare.proxied = True
           , type = "CNAME"
@@ -186,15 +192,9 @@ in      { `` =
           , value =
               "flexible-ceratosaurus-qsubhltjib65dmq2j8qa44i8.herokudns.com."
           }
-        , mail = { type = "CNAME", value = "ghs.googlehosted.com." }
         , monitor = { type = "CNAME", value = "zachlatta.com." }
-        , search = { type = "A", value = "100.77.1.14" }
+        , search = { type = "CNAME", value = "slowking.servers.tailscale.zachlatta.com." }
         , sshtron = { type = "A", value = "149.28.243.27" }
         , words = { type = "CNAME", value = "svbtle.com." }
-        , www =
-          { octodns.cloudflare.proxied = True
-          , type = "CNAME"
-          , value = "zachlatta.com."
-          }
         }
     //  servers
