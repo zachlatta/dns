@@ -1,0 +1,20 @@
+---
+manager:
+  max_workres: 2
+
+providers:
+  config:
+    class: octodns.provider.yaml.YamlProvider
+    directory: ./
+    default_ttl: 3600
+    enforce_order: True
+  cloudflare:
+    class: octodns.provider.cloudflare.CloudflareProvider
+    token: env/CLOUDFLARE_TOKEN
+
+zones:
+  zachlatta.com.:
+    sources:
+      - config
+    targets:
+      - cloudflare
