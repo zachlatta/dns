@@ -1,7 +1,7 @@
 let servers = ./servers.dhall
 
 in      { `` =
-          [ { octodns = Some { cloudflare.proxied = False }
+          [ { octodns = Some { cloudflare.proxied = True }
             , type = "ALIAS"
             , value = Some "relay.servers.zachlatta.com."
             , values =
